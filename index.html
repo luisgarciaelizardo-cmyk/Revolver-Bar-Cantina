@@ -91,6 +91,53 @@
 
     .address { margin-top: 22px; color: var(--muted); font-size: 13px; line-height: 1.6; }
     footer { margin-top: 30px; color: #6f6f6f; font-size: 12px; }
+    html { scroll-behavior: smooth; }
+    .btn-menu { background: var(--gold); }
+
+    .menu { margin-top: 30px; text-align: left; scroll-margin-top: 16px; }
+    .menu h2 {
+      font-family: 'Rye', serif; font-weight: 400;
+      font-size: 30px; text-align: center; color: var(--gold);
+    }
+    .menu .hint { text-align: center; color: var(--muted); font-size: 13px; margin: 4px 0 16px; }
+    .promo {
+      background: linear-gradient(135deg, #7a0f12, #e0262b);
+      border-radius: 14px; padding: 14px 16px; margin-bottom: 14px;
+      text-align: center; font-weight: 700; font-size: 15px; line-height: 1.4;
+    }
+    .promo strong { display: block; font-size: 22px; font-weight: 800; }
+    .menu-cat {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 14px; margin-bottom: 10px; overflow: hidden;
+    }
+    .menu-cat summary {
+      list-style: none; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 18px; font-size: 17px; font-weight: 800;
+    }
+    .menu-cat summary::-webkit-details-marker { display: none; }
+    .menu-cat summary::after { content: '+'; color: var(--gold); font-size: 24px; line-height: 1; }
+    .menu-cat[open] summary::after { content: '−'; }
+    .menu-cat[open] summary { border-bottom: 1px solid rgba(224, 38, 43, .5); }
+    .menu-cat ul { list-style: none; padding: 6px 18px 12px; }
+    .menu-cat li {
+      display: flex; justify-content: space-between; gap: 12px;
+      padding: 9px 0; font-size: 14px;
+      border-bottom: 1px dashed rgba(255, 255, 255, .1);
+    }
+    .menu-cat li:last-child { border-bottom: 0; }
+    .price { color: var(--gold-light); font-weight: 700; white-space: nowrap; }
+
+    .credit {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 14px; padding: 7px 14px;
+      border: 1px solid rgba(224, 38, 43, .6); border-radius: 50px;
+      color: var(--muted); font-size: 12px; text-decoration: none;
+      transition: background .15s ease, color .15s ease;
+    }
+    .credit strong { color: #fff; }
+    .credit:hover, .credit:focus-visible { background: rgba(224, 38, 43, .15); color: #fff; }
   </style>
 </head>
 <body>
@@ -113,6 +160,11 @@
       </a>
     </section>
 
+    <a class="btn btn-menu" href="#menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.1 1.7 3.8 3.8 4v9h2.5v-9C11.3 12.8 13 11.1 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.8 0-5 2.2-5 4z"/></svg>
+      Ver Menú
+    </a>
+
     <a class="btn btn-maps" target="_blank" rel="noopener" href="https://maps.app.goo.gl/BwnVKc2vvy41y8G18">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
       Ubicación
@@ -128,9 +180,172 @@
       TikTok
     </a>
 
+    <section class="menu" id="menu">
+      <h2>Menú</h2>
+      <p class="hint">Toca una categoría para ver los precios</p>
+      <div class="promo">🍺 La Revolcada de Revolver <strong>por solo $99</strong></div>
+      <details class="menu-cat" open>
+        <summary><span>🌮 Platillos a la carta</span></summary>
+        <ul>
+          <li><span>Burrito Revolver</span><span class="price">$60</span></li>
+          <li><span>Guacamole con Asada</span><span class="price">$99</span></li>
+          <li><span>Nachos Revolver</span><span class="price">$99</span></li>
+          <li><span>Papas Francesas Revolver</span><span class="price">$99</span></li>
+          <li><span>Parrillada</span><span class="price">$360</span></li>
+          <li><span>Queso Fundido</span><span class="price">$150</span></li>
+          <li><span>Taco Asada</span><span class="price">$22</span></li>
+          <li><span>Taco Pastor</span><span class="price">$22</span></li>
+          <li><span>Orden de Tacos</span><span class="price">$80</span></li>
+          <li><span>Tostada Aguachile</span><span class="price">$45</span></li>
+        </ul>
+      </details>
+      <details class="menu-cat">
+        <summary><span>🍺 Cerveza</span></summary>
+        <ul>
+          <li><span>Ámbar</span><span class="price">$37</span></li>
+          <li><span>Amstel</span><span class="price">$45</span></li>
+          <li><span>Bohemia</span><span class="price">$45</span></li>
+          <li><span>Caguama Familiar</span><span class="price">$80</span></li>
+          <li><span>Caguama Miller</span><span class="price">$90</span></li>
+          <li><span>Carta Blanca</span><span class="price">$39</span></li>
+          <li><span>Cerveza Alemana</span><span class="price">$25</span></li>
+          <li><span>Corona Clara</span><span class="price">$37</span></li>
+          <li><span>Corona Golden</span><span class="price">$37</span></li>
+          <li><span>Coronita 1/4</span><span class="price">$29</span></li>
+          <li><span>Cubeta 1/4 Coronita</span><span class="price">$250</span></li>
+          <li><span>Indio</span><span class="price">$37</span></li>
+          <li><span>Miller High Life</span><span class="price">$45</span></li>
+          <li><span>Miller Lite</span><span class="price">$45</span></li>
+          <li><span>Modelo Especial</span><span class="price">$40</span></li>
+          <li><span>Negra Modelo</span><span class="price">$45</span></li>
+          <li><span>Tecate Light</span><span class="price">$37</span></li>
+          <li><span>Tecate / Corona Cero</span><span class="price">$37</span></li>
+          <li><span>Ultra</span><span class="price">$45</span></li>
+          <li><span>Victoria</span><span class="price">$37</span></li>
+          <li><span>XX Lager</span><span class="price">$39</span></li>
+        </ul>
+      </details>
+      <details class="menu-cat">
+        <summary><span>🍹 Coctelería</span></summary>
+        <ul>
+          <li><span>Botella Vino Tinto</span><span class="price">$390</span></li>
+          <li><span>Bufandas 2x1</span><span class="price">$199</span></li>
+          <li><span>Caribe Cooler</span><span class="price">$47</span></li>
+          <li><span>Clamato</span><span class="price">$47</span></li>
+          <li><span>Clamato Sabinas</span><span class="price">$110</span></li>
+          <li><span>Copa 2x1 Tanqueray</span><span class="price">$120</span></li>
+          <li><span>Copa 2x1 Baileys</span><span class="price">$95</span></li>
+          <li><span>Copa 2x1 Hpnotiq</span><span class="price">$150</span></li>
+          <li><span>Copa 2x1 Jäger</span><span class="price">$140</span></li>
+          <li><span>Copa 2x1 Licor 43</span><span class="price">$120</span></li>
+          <li><span>Hoja Sen</span><span class="price">$45</span></li>
+          <li><span>Mezcal</span><span class="price">$140</span></li>
+          <li><span>Michelada</span><span class="price">$47</span></li>
+          <li><span>Perlas Negras 2x1</span><span class="price">$180</span></li>
+          <li><span>Revolcada</span><span class="price">$99</span></li>
+        </ul>
+      </details>
+      <details class="menu-cat">
+        <summary><span>🥃 Whiskey</span></summary>
+        <ul>
+          <li><span>Botella Black & White</span><span class="price">$670</span></li>
+          <li><span>Botella Black Label</span><span class="price">$1,550</span></li>
+          <li><span>Botella Buchanan's 12</span><span class="price">$1,400</span></li>
+          <li><span>Botella Chivas Regal 12</span><span class="price">$1,300</span></li>
+          <li><span>Botella Red Label</span><span class="price">$890</span></li>
+          <li><span>Copa 2x1 Black Label</span><span class="price">$160</span></li>
+          <li><span>Copa 2x1 Black & White</span><span class="price">$100</span></li>
+          <li><span>Copa 2x1 Buchanan's 12</span><span class="price">$140</span></li>
+          <li><span>Copa 2x1 Chivas 12</span><span class="price">$130</span></li>
+          <li><span>Copa 2x1 Red Label</span><span class="price">$115</span></li>
+        </ul>
+      </details>
+      <details class="menu-cat">
+        <summary><span>🌵 Tequilas</span></summary>
+        <ul>
+          <li><span>Botella 1800</span><span class="price">$1,600</span></li>
+          <li><span>Botella 7 Leguas</span><span class="price">$1,500</span></li>
+          <li><span>Botella Centenario 1 L</span><span class="price">$1,000</span></li>
+          <li><span>Botella Centenario Plata</span><span class="price">$895</span></li>
+          <li><span>Botella Don Julio 70 Cristalino</span><span class="price">$1,550</span></li>
+          <li><span>Botella Don Julio Blanco</span><span class="price">$1,250</span></li>
+          <li><span>Botella Hornitos</span><span class="price">$870</span></li>
+          <li><span>Botella José Cuervo</span><span class="price">$670</span></li>
+          <li><span>Botella Maestro Dobel</span><span class="price">$1,350</span></li>
+          <li><span>Botella Tradicional Reposado</span><span class="price">$670</span></li>
+          <li><span>Copa 2x1 7 Leguas</span><span class="price">$150</span></li>
+          <li><span>Copa 2x1 1800 Cristalino</span><span class="price">$160</span></li>
+          <li><span>Copa 2x1 Centenario Plata</span><span class="price">$115</span></li>
+          <li><span>Copa 2x1 Codorniz</span><span class="price">$75</span></li>
+          <li><span>Copa 2x1 Don Julio 70</span><span class="price">$155</span></li>
+          <li><span>Copa 2x1 Don Julio Blanco</span><span class="price">$125</span></li>
+          <li><span>Copa 2x1 Hornitos</span><span class="price">$115</span></li>
+          <li><span>Copa 2x1 José Cuervo</span><span class="price">$95</span></li>
+          <li><span>Copa 2x1 Maestro Dobel</span><span class="price">$150</span></li>
+          <li><span>Copa 2x1 Tradicional Reposado</span><span class="price">$95</span></li>
+        </ul>
+      </details>
+      <details class="menu-cat">
+        <summary><span>🍸 Vodka</span></summary>
+        <ul>
+          <li><span>Botella Oso Negro</span><span class="price">$550</span></li>
+          <li><span>Botella Smirnoff Tamarindo</span><span class="price">$670</span></li>
+          <li><span>Copa 2x1 Vodka Oso Negro</span><span class="price">$70</span></li>
+          <li><span>Copa 2x1 Smirnoff Tamarindo</span><span class="price">$90</span></li>
+        </ul>
+      </details>
+      <details class="menu-cat">
+        <summary><span>🏴‍☠️ Ron</span></summary>
+        <ul>
+          <li><span>Botella Bacardí Blanco</span><span class="price">$650</span></li>
+          <li><span>Botella Bacardí Solera</span><span class="price">$750</span></li>
+          <li><span>Botella Capitán Morgan</span><span class="price">$650</span></li>
+          <li><span>Botella Presidente</span><span class="price">$650</span></li>
+          <li><span>Botella Torres 10</span><span class="price">$890</span></li>
+          <li><span>Botella Zacapa</span><span class="price">$1,900</span></li>
+          <li><span>Copa 2x1 Torres 10</span><span class="price">$110</span></li>
+          <li><span>Copa 2x1 Bacardí Blanco</span><span class="price">$75</span></li>
+          <li><span>Copa 2x1 Bacardí Solera</span><span class="price">$95</span></li>
+          <li><span>Copa 2x1 Capitán Morgan</span><span class="price">$95</span></li>
+          <li><span>Copa 2x1 Don Pedro</span><span class="price">$75</span></li>
+          <li><span>Copa 2x1 Presidente</span><span class="price">$75</span></li>
+          <li><span>Copa 2x1 Zacapa</span><span class="price">$160</span></li>
+        </ul>
+      </details>
+      <details class="menu-cat">
+        <summary><span>🥤 Refrescos</span></summary>
+        <ul>
+          <li><span>Peñafiel 355 ml</span><span class="price">$37</span></li>
+          <li><span>Agua Natural</span><span class="price">$35</span></li>
+          <li><span>Agua Quina</span><span class="price">$45</span></li>
+          <li><span>Boost</span><span class="price">$45</span></li>
+          <li><span>Coca-Cola 355 ml</span><span class="price">$37</span></li>
+          <li><span>Limonada Natural / Mineral</span><span class="price">$45</span></li>
+          <li><span>Squirt o Fresca 355 ml</span><span class="price">$37</span></li>
+          <li><span>Topo Chico</span><span class="price">$40</span></li>
+        </ul>
+      </details>
+      <details class="menu-cat">
+        <summary><span>🥜 Tiendita</span></summary>
+        <ul>
+          <li><span>Aceitunas</span><span class="price">$45</span></li>
+          <li><span>Cacahuate Cáscara</span><span class="price">$40</span></li>
+          <li><span>Cacahuate Salado</span><span class="price">$25</span></li>
+          <li><span>Carne Seca</span><span class="price">$70</span></li>
+          <li><span>Chicharrones</span><span class="price">$38</span></li>
+          <li><span>Gomitas</span><span class="price">$25</span></li>
+          <li><span>Halls</span><span class="price">$25</span></li>
+          <li><span>Papas Fritas</span><span class="price">$35</span></li>
+        </ul>
+      </details>
+    </section>
+
     <p class="address">📍 Carmen Aguirre de Fuentes 351, Zona Centro,<br>25000 Saltillo, Coahuila</p>
 
-    <footer>© Revolver Bar Cantina</footer>
+    <footer>
+      © Revolver Bar Cantina<br>
+      <a class="credit" href="https://tfc-ebon.vercel.app/" target="_blank" rel="noopener">⚡ Creado por <strong>TFC</strong></a>
+    </footer>
   </main>
 </body>
 </html>
