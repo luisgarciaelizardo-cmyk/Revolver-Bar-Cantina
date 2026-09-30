@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revolver Bar Cantina</title>
+  <meta name="description" content="Revolver Bar Cantina · Carmen Aguirre de Fuentes 351, Zona Centro, Saltillo, Coahuila.">
+  <meta name="theme-color" content="#111111">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rye&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e0e0e;
+      --card: #1a1a1a;
+      --gold: #d4a24c;
+      --gold-light: #f0c877;
+      --text: #ffffff;
+      --muted: #bdbdbd;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg) radial-gradient(circle at top, #3a2410 0%, #0e0e0e 60%) no-repeat;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 40px 16px;
+    }
+    .container { width: 100%; max-width: 480px; text-align: center; }
+
+    .logo {
+      width: 150px; height: 150px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      border: 4px solid var(--gold);
+      background: #000;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 30px rgba(212, 162, 76, .35);
+      overflow: hidden;
+    }
+    .logo img { width: 100%; height: 100%; object-fit: cover; }
+    .logo span { font-family: 'Rye', serif; font-size: 44px; color: var(--gold); }
+
+    h1 {
+      font-family: 'Rye', serif;
+      font-weight: 400;
+      font-size: 34px;
+      line-height: 1.15;
+      color: var(--gold-light);
+      letter-spacing: 1px;
+    }
+    .tagline { margin-top: 8px; color: var(--muted); font-size: 15px; }
+
+    .divider {
+      width: 80px; height: 3px; margin: 24px auto;
+      background: var(--gold); border-radius: 3px;
+    }
+
+    .review-box {
+      background: var(--card);
+      border: 1px solid rgba(212, 162, 76, .4);
+      border-radius: 16px;
+      padding: 22px 18px;
+      margin-bottom: 22px;
+    }
+    .review-box h2 { font-size: 20px; font-weight: 800; margin-bottom: 6px; }
+    .review-box p { color: var(--muted); font-size: 14px; line-height: 1.5; }
+    .stars { font-size: 30px; color: #fbbc04; letter-spacing: 4px; margin: 10px 0 14px; }
+
+    .btn {
+      display: flex; align-items: center; justify-content: center; gap: 12px;
+      width: 100%;
+      padding: 17px 20px;
+      margin-bottom: 14px;
+      border-radius: 50px;
+      font-size: 17px; font-weight: 700;
+      text-decoration: none; color: #fff;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, .45);
+      transition: transform .15s ease, filter .15s ease;
+    }
+    .btn:hover, .btn:focus-visible { transform: translateY(-2px); filter: brightness(1.1); }
+    .btn:active { transform: scale(.98); }
+    .btn svg { width: 24px; height: 24px; flex-shrink: 0; fill: currentColor; }
+
+    .btn-google   { background: #fff; color: #222; margin-bottom: 0; }
+    .btn-maps     { background: #ea4335; }
+    .btn-facebook { background: #1877f2; }
+    .btn-tiktok   { background: #000; border: 2px solid #25f4ee; box-shadow: 3px 3px 0 #fe2c55; }
+
+    .address { margin-top: 22px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+    footer { margin-top: 30px; color: #6f6f6f; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <!-- Para usar el logo real, reemplaza el <span> por: <img src="logo.png" alt="Revolver Bar Cantina"> -->
+    <div class="logo"><span>RB</span></div>
+
+    <h1>Revolver<br>Bar Cantina</h1>
+    <p class="tagline">¡Bienvenido! Gracias por visitarnos 🍻</p>
+
+    <div class="divider"></div>
+
+    <section class="review-box">
+      <h2>¿Te gustó tu visita?</h2>
+      <p>Tu opinión nos ayuda muchísimo. Déjanos tu reseña en Google, ¡solo toma un minuto!</p>
+      <div class="stars">★★★★★</div>
+      <a class="btn btn-google" target="_blank" rel="noopener"
+         href="https://www.google.com/search?hl=es-419&gl=mx&q=Revolver+Bar+Cantina,+Carmen+Aguirre+de+Fuentes+351,+Zona+Centro,+25000+Saltillo,+Coah.&ludocid=8469601601680010484&lsig=AB86z5VmzyQ2kjbNaDMFAiNT35zr#lrd=0x8688730056a6dec1:0x758a11c869376cf4,3">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>
+        Déjanos tu reseña
+      </a>
+    </section>
+
+    <a class="btn btn-maps" target="_blank" rel="noopener" href="https://maps.app.goo.gl/BwnVKc2vvy41y8G18">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+      Ubicación
+    </a>
+
+    <a class="btn btn-facebook" target="_blank" rel="noopener" href="https://www.facebook.com/share/1dycZzV8wc/?mibextid=wwXIfr">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07z"/></svg>
+      Facebook
+    </a>
+
+    <a class="btn btn-tiktok" target="_blank" rel="noopener" href="https://www.tiktok.com/@revolver.cantina4">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 6.7a4.8 4.8 0 0 1-3.8-4.2V2h-3.4v13.6a2.9 2.9 0 0 1-5.2 1.7 2.9 2.9 0 0 1 3.2-4.5V9.3a6.3 6.3 0 0 0-5.4 10.7 6.3 6.3 0 0 0 10.8-4.4V8.7a8.2 8.2 0 0 0 4.8 1.5V6.8a4.8 4.8 0 0 1-1-.1z"/></svg>
+      TikTok
+    </a>
+
+    <p class="address">📍 Carmen Aguirre de Fuentes 351, Zona Centro,<br>25000 Saltillo, Coahuila</p>
+
+    <footer>© Revolver Bar Cantina</footer>
+  </main>
+</body>
+</html>
