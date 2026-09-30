@@ -130,12 +130,13 @@
     .price { color: var(--gold-light); font-weight: 700; white-space: nowrap; }
 
     .credit {
-      display: inline-flex; align-items: center; gap: 6px;
-      margin-top: 14px; padding: 7px 14px;
+      display: inline-flex; align-items: center; gap: 10px;
+      margin-top: 14px; padding: 6px 16px 6px 6px;
       border: 1px solid rgba(224, 38, 43, .6); border-radius: 50px;
       color: var(--muted); font-size: 12px; text-decoration: none;
       transition: background .15s ease, color .15s ease;
     }
+    .credit img { width: 40px; height: 40px; border-radius: 50%; background: #fff; object-fit: contain; }
     .credit strong { color: #fff; }
     .credit:hover, .credit:focus-visible { background: rgba(224, 38, 43, .15); color: #fff; }
   </style>
@@ -344,7 +345,10 @@
 
     <footer>
       © Revolver Bar Cantina<br>
-      <a class="credit" href="https://tfc-ebon.vercel.app/" target="_blank" rel="noopener">⚡ Creado por <strong>TFC</strong></a>
+      <a class="credit" href="https://tfc-ebon.vercel.app/" target="_blank" rel="noopener">
+        <img src="tfc-logo.jpeg" alt="TFC · Technology Family Company" width="40" height="40">
+        <span>Creado por <strong>TFC</strong></span>
+      </a>
     </footer>
   </main>
 </body>
